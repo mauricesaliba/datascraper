@@ -2,12 +2,6 @@ import argparse
 import os
 from itertools import count
 
-def remap(fieldnames):
-    price_count = count(1)
-    return ['price{}'.format(next(price_count)) if f.startswith('price') else f
-            for f in fieldnames]
-
-
 def suffixDuplicateStrings(liststrings):
     dicts = {}
     for i in range(len(liststrings)):
@@ -24,3 +18,7 @@ def suffixDuplicateStrings(liststrings):
     
 values = ["A", "B", "C", "D", "A"]    
 print(suffixDuplicateStrings(values))
+
+
+joe = 'Col1', 'Col2'
+print(type(joe))
