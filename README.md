@@ -6,7 +6,7 @@ TODO:
 
 1. Get unique sprint names
 2. Get unique Assignees
-3. Get unique project codes
+3. Get unique project codes - has to be done from epics datasource
 4. Get Epics from Jira
 5. Filter out columns that are not needed from merging process output csv
 6. Create Calendar dimension
