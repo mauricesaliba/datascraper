@@ -13,7 +13,6 @@ def suffixDuplicateStrings(liststrings):
         dicts[liststrings[i]] = 0
     return liststrings
 
-
 parser = argparse.ArgumentParser(description='Merges files with different number of columns')
 parser.add_argument('--ifp',  nargs='?', required=True, metavar='input files path', help='input files path')
 parser.add_argument('--ofp',  nargs='?', required=True, metavar='output files path', help='output files path')
@@ -38,8 +37,8 @@ for filename in inputs:
     reader = csv.reader(f_in)
     headers = next(reader)
     headers = suffixDuplicateStrings(headers) 
-    print("headers: -----------------")
-    print(headers)
+    #print("headers: -----------------")
+    #print(headers)
     for h in headers:
        if h not in fieldnames and not h.startswith('Log Work'):
          fieldnames.append(h)
@@ -58,14 +57,11 @@ with open(outputFilesPath, "w", newline="",encoding='utf8') as f_out:   # Commen
   for filename in inputs:
     with open(inputFilesPath + filename, "r", newline="",encoding='utf8') as f_in:
       reader = csv.DictReader(f_in)  # Uses the field names in this file
+      reader.fieldnames = suffixDuplicateStrings(reader.fieldnames)      
+      
       for line in reader:
         writer.writerow(line)
-        
-with open(filename, 'rb') as csvfile:
-    reader = csv.reader(csvfile)
-    fieldnames = remap(next(reader))
-    for row in reader:
-        row = dict(zip(fieldnames, row))        
+             
 
 
 
