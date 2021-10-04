@@ -13,7 +13,7 @@ TODO:
 9. To create visualizations.
 
 
-## RUN jql_to_csv.py - extract any jira issues by any JQL search
+## RUN jql_to_csv.py - extract jira issues and Epics
 
 **to get issues use jql:** 'team in( 1 , 2, 3, 4, 5, 6) AND updatedDate >= "2019/01/01" AND updatedDate <= "2021/12/31" ORDER BY key'
 **to get epics use jql:** 'type = Epic  and created >= "2019/01/01" ORDER BY created'
