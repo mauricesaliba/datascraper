@@ -11,13 +11,13 @@ TODO:
 
 ## 01 RUN jql_to_csv.py - extract jira issues and Epics
 
-**to get issues use jql:** 'team in (1, 2, 3, 4, 5, 6, 7, DE) AND status CHANGED to (Fixed, Closed) AFTER startOfYear() AND status IN (Fixed, Closed) AND resolution NOT IN ("Won't Do","Won't Fix",Duplicate, Rejected, Unapproved) ORDER BY key ASC'
+**to get issues use jql:** 'team in (1, 2, 3, 4, 5, 6, 7, DE) AND status CHANGED to (Fixed, Closed) AFTER startOfYear() AND status IN (Fixed, Closed) AND resolution IN (Fixed,Done,Unresolved) ORDER BY key ASC'
 **to get epics use jql:** 'type = Epic  and created >= "2019/01/01" ORDER BY created'
 
 
 https://confluence.atlassian.com/jirakb/exporting-jira-s-issues-using-csv-in-batches-1071829731.html
 
-python jql_to_csv.py -u maurice.saliba -U "http://jira.go.com.mt" --jql 'team in (1, 2, 3, 4, 5, 6, 7, DE) AND status CHANGED to (Fixed, Closed) AFTER startOfYear()  AND status IN (Fixed, Closed) AND resolution NOT IN ("Won't Do","Won't Fix",Duplicate, Rejected, Unapproved) ORDER BY key ASC' -n 5000
+python jql_to_csv.py -u maurice.saliba -U "http://jira.go.com.mt" --jql 'team in (1, 2, 3, 4, 5, 6, 7, DE) AND status CHANGED to (Fixed, Closed) AFTER startOfYear() AND status IN (Fixed, Closed) AND resolution IN (Fixed,Done,Unresolved) ORDER BY key ASC' -n 5000
 
 ## 02 RUN MergFiles.py - merges multiple jira issues CSV files into one.
 
