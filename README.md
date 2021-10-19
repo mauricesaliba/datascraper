@@ -30,6 +30,8 @@ python unpivotSprints.py
 
 ## 04 RUN getUniqueJiraCategories.py - creates all the necessary dimension tables (seperate CSV files) for Jiras. Example: types, status, assignee.
 
+python getUniqueJiraCategories.py
+
 ## 05 Get projects file from Confluence
 
 ## 06 Load data in Power BI 
