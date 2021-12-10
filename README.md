@@ -11,13 +11,14 @@ TODO:
 
 ## 01 RUN jql_to_csv.py - extract jira issues and Epics
 
-**to get issues use jql:** 'team in( 1 , 2, 3, 4, 5, 6) AND updatedDate >= "2019/01/01" AND updatedDate <= "2021/12/31" ORDER BY key'
-**to get epics use jql:** 'type = Epic  and created >= "2019/01/01" ORDER BY created'
+**to get issues use jql:** 'team in (1, 2, 3, 4, 5, 6, 7, DE) AND status CHANGED to (Fixed, Closed) AFTER startOfYear() AND status IN (Fixed, Closed) AND resolution IN (Fixed,Done,Unresolved) ORDER BY key ASC'
+**to get epics use jql:** 'type = Epic and created >= startOfYear(-3) ORDER BY created'
 
+python jql_to_csv.py -u maurice.saliba -U "http://jira.go.com.mt" --jql 'team in (1, 2, 3, 4, 5, 6, 7, DE) AND status CHANGED to (Fixed, Closed) AFTER startOfYear() AND status IN (Fixed, Closed) AND resolution IN (Fixed,Done,Unresolved) ORDER BY key ASC' -n 5000
+
+python jql_to_csv.py -u maurice.saliba -U "http://jira.go.com.mt" --jql 'type = Epic and created >= startOfYear(-3) ORDER BY created' -n 5000
 
 https://confluence.atlassian.com/jirakb/exporting-jira-s-issues-using-csv-in-batches-1071829731.html
-
-python jql_to_csv.py -u maurice.saliba -U "http://jira.go.com.mt" --jql 'team in( 1 , 2, 3, 4, 5, 6) AND updatedDate >= "2019/01/01" AND updatedDate <= "2021/12/31" ORDER BY key' -n 5000
 
 ## 02 RUN MergFiles.py - merges multiple jira issues CSV files into one.
 
@@ -28,6 +29,8 @@ python mergeFiles.py --ifp 'C:\Users\maurice.saliba\OneDrive - GO PLC\MANAGEMENT
 python unpivotSprints.py
 
 ## 04 RUN getUniqueJiraCategories.py - creates all the necessary dimension tables (seperate CSV files) for Jiras. Example: types, status, assignee.
+
+python getUniqueJiraCategories.py
 
 ## 05 Get projects file from Confluence
 
