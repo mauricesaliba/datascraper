@@ -12,6 +12,9 @@ TODO:
 ## 01 RUN jql_to_csv.py - extract jira issues and Epics
 
 **to get issues use jql:** 'team in (1, 2, 3, 4, 5, 6, 7, DE) AND status CHANGED to (Fixed, Closed) AFTER startOfYear() AND status IN (Fixed, Closed) AND resolution IN (Fixed,Done,Unresolved) ORDER BY key ASC'
+
+*startOfYear()can get the argument of -3 to get all the jiras for start of year of 3 years ago*
+
 **to get epics use jql:** 'type = Epic and created >= startOfYear(-3) ORDER BY created'
 
 python jql_to_csv.py -u maurice.saliba -U "http://jira.go.com.mt" --jql 'team in (1, 2, 3, 4, 5, 6, 7, DE) AND status CHANGED to (Fixed, Closed) AFTER startOfYear() AND status IN (Fixed, Closed) AND resolution IN (Fixed,Done,Unresolved) ORDER BY key ASC' -n 5000
