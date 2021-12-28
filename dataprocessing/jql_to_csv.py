@@ -10,7 +10,7 @@ parser.add_argument('-u', required=True, metavar='username', help='Username')
 parser.add_argument('-p', nargs='?', default='', metavar='password', help='Password. If parameter is not passed, the password will be prompted')
 parser.add_argument('-n', nargs='?', default=1000, metavar='Number_of_issues', help='Number of issues per CSV batch. Default of 1000 in line with Jiras default. For more details, check https://confluence.atlassian.com/jirakb/filter-export-only-contains-1000-issues-in-jira-server-191500982.html')
 parser.add_argument('-U','--url', required=True, metavar='Base_URL', help='Jira''s base URL. For example, https://jira.mycompany.com')
-parser.add_argument('-P', nargs='?', default='', metavar='File_path_output', help='where downloaded jira issues will be written')
+parser.add_argument('-P', nargs='?', default='', metavar='filepath', help='where downloaded jira issues files will be output')
 
 args = parser.parse_args()
 
@@ -21,12 +21,8 @@ step = int(args.n)
 baseurl = args.url
 filepath = args.P
 
-if password.trim() == '':
+if password.strip() == '':
     password = getpass.getpass()
-
-if filepath.trim() == '':
-    filepath = input('Provide working directory:\n')
-#print(args)
 
 start=0
 
