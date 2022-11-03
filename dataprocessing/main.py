@@ -1,9 +1,9 @@
 import pandas as pd
 
-issuesfilepath = "C:/Users/maurice.saliba/OneDrive - GO PLC/MANAGEMENT/JIRA/Workspace/RUNS/2021-12-22/ISSUES/output.csv"
-outfilepath = "C:/Users/maurice.saliba/OneDrive - GO PLC/MANAGEMENT/JIRA/Workspace/RUNS/2021-12-22/ISSUES/storypoints.csv"
+issuesfilepath = "C:/Users/maurice.saliba/OneDrive - GO PLC/MANAGEMENT/JIRA/Workspace/RUNS/2022-11-03/ISSUES/output.csv"
+outfilepath = "C:/Users/maurice.saliba/OneDrive - GO PLC/MANAGEMENT/JIRA/Workspace/RUNS/2022-11-03/ISSUES/storypoints.csv"
 projectsfilepath = "C:/Users/maurice.saliba/OneDrive - GO PLC/MANAGEMENT/JIRA/Workspace/COMMON SLOW CHANGING/projects.csv"
-epicsfilepath = "C:/Users/maurice.saliba/OneDrive - GO PLC/MANAGEMENT/JIRA/Workspace/RUNS/2021-12-22/EPICS/BI-9456-EPD-731.csv"
+epicsfilepath = "C:/Users/maurice.saliba/OneDrive - GO PLC/MANAGEMENT/JIRA/Workspace/RUNS/2022-11-03/EPICS/"
 
 
 dfissues = pd.read_csv(issuesfilepath)

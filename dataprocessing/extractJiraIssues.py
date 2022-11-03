@@ -2,7 +2,7 @@ import subprocess
 import shlex
 import getpass
 import mergeFiles
-import unpivotSprints
+
 
 password = getpass.getpass("Input Jira password:")
 workingDirectory = input("Input working directory:")
